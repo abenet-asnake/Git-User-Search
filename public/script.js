@@ -1,34 +1,27 @@
 function searchUser(){
-    const username= document.getElementById('gitusername').value;
-    if(!username){
-        alert('Please enter a GitHub username');
-        console.log('Please enter a GitHub username');
-        return;
-    }
+    const username= document.getElementById("gitUsername").value;
+ 
     fetch(`https://api.github.com/users/${username}`)
     .then ((response) =>  response.json())
-        .then((data) => displayUserDetails(data))
-         . catch (error => {
-            alert(`User not found or API error: ${error.message}`);
-            console.log(error);
-        
-    });
+    .then((data) => displayUserDetails(data))
+    . catch (error =>console.log(error));
     
     }
 
 
 function displayUserDetails(user){
-    const userDetails = getElementById(userDetail).value;
+    console.log('hello  world');
+    const userDetailsDiv = document.getElementById("userDetail");
     userDetailsDiv.innerHTML = " ";
 
     // creating userProfile DIV in the html element
-    const userProfile = createElement("div");
-    userProfile.classList.add("userProfile");
+    const userProfile = document.createElement("div");
+    userProfile.classList.add("user-Profile");
 // creating user image element having the classList.add("user-image") method
-const userImage = createElement("img");
+const userImage = document.createElement("img");
 userImage.src = user.avatar_url;
 userImage.classList.add("user-image");
 userProfile.appendChild(userImage);
 
-
+userDetailsDiv.appendChild(userProfile);
 }
