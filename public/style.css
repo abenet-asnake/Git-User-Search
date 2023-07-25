@@ -1,0 +1,14 @@
+body{
+    font-style: Bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+h1 {
+    margin-bottom: 20px;
+}
+
+#gitusername{
+    padding: 5px;
+    margin-right: 10px;
+    width:17%;
+}
