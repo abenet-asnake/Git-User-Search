@@ -20,7 +20,11 @@ function searchUser(){
 function displayUserDetails(user){
     const userDetails = getElementById(userDetail).value;
     userDetailsDiv.innerHTML = " ";
-    
+
+    // creating userProfile DIV in the html element
+    const userProfile = createElement("div");
+    userProfile.classList.add("userProfile");
+
 
 
 }
