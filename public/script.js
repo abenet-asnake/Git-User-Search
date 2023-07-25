@@ -26,6 +26,11 @@ userProfile.appendChild(userImage);
 const userName = document.createElement("h2");
 userName.textContent = user.login;
 userProfile.appendChild(userName);
+// creating user profile link 
+const userProfileLink = document.createElement("a");
+userProfile.href=user.html_url;
+userProfileLink.textContent = ("View Profile");
+userProfile.appendChild(userProfileLink);
 
 userDetailsDiv.appendChild(userProfile);
 }
