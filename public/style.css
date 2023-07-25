@@ -12,3 +12,11 @@ h1 {
     margin-right: 10px;
     width:17%;
 }
+.user-profile {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 300px;
+  }
+  
