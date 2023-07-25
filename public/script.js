@@ -24,7 +24,11 @@ function displayUserDetails(user){
     // creating userProfile DIV in the html element
     const userProfile = createElement("div");
     userProfile.classList.add("userProfile");
-
+// creating user image element having the classList.add("user-image") method
+const userImage = createElement("img");
+userImage.src = user.avatar_url;
+userImage.classList.add("user-image");
+userProfile.appendChild(userImage);
 
 
 }
