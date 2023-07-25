@@ -5,4 +5,5 @@ function searchUser(){
         return;
     }
     axios.get(`https://api.github.com/users/${username}`);
+    
 }
