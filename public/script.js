@@ -29,7 +29,7 @@ userProfile.appendChild(userName);
 // creating user profile link 
 const userProfileLink = document.createElement("a");
 userProfile.href=user.html_url;
-userProfileLink.textContent = ("View Profile");
+userProfileLink.textContent = "View Profile";
 userProfile.appendChild(userProfileLink);
 
 userDetailsDiv.appendChild(userProfile);
