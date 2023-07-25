@@ -22,6 +22,10 @@ const userImage = document.createElement("img");
 userImage.src = user.avatar_url;
 userImage.classList.add("user-image");
 userProfile.appendChild(userImage);
+// creating user name of git  
+const userName = document.createElement("h2");
+userName.textContent = user.login;
+userProfile.appendChild(userName);
 
 userDetailsDiv.appendChild(userProfile);
 }
