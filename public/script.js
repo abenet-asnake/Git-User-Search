@@ -35,6 +35,10 @@ userProfile.appendChild(userProfileLink);
 const followerProfile = document.createElement("p");
 followerProfile.textContent = "Follower: "+user.followers;
 userProfile.appendChild(followerProfile);
+// public repository 
+const publicRepo=document.createElement("p");
+publicRepo.textContent="Public Repository: "+ user.public_repos;
+userProfile.appendChild(publicRepo);
 
 userDetailsDiv.appendChild(userProfile);
 }
