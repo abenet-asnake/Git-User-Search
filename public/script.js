@@ -2,10 +2,15 @@ function searchUser(){
     const username= document.getElementById("gitUsername").value;
  
     fetch(`https://api.github.com/users/${username}`)
-    .then ((response) =>  response.json())
-    .then((data) => displayUserDetails(data))
-    . catch (error =>console.log(error));
-    
+    fetch(`https://api.github.com/users/${username}`)
+        .then(response => response.json())
+        .then(data => {
+          displayUserDetails(data);
+          return fetch(data.repos_url); // Fetch the user's repositories
+        })
+        .then(response => response.json())
+        .then(repositories => displayRepositories(repositories))
+        .catch(error => console.error(error));
     }
 
 
@@ -40,5 +45,22 @@ const publicRepo=document.createElement("p");
 publicRepo.textContent="Public Repository: "+ user.public_repos;
 userProfile.appendChild(publicRepo);
 
+
 userDetailsDiv.appendChild(userProfile);
 }
+
+//listing repositories
+function displayRepositories(repositories) {
+    const repoList = document.createElement("ul");
+    repositories.forEach(repo => {
+      const listItem = document.createElement("li");
+      const repoLink = document.createElement("a");
+      repoLink.href = repo.html_url;
+      repoLink.textContent = repo.name;
+      listItem.appendChild(repoLink);
+      repoList.appendChild(listItem);
+    });
+
+    const userDetailsDiv = document.getElementById("userDetail");
+    userDetailsDiv.appendChild(repoList);
+  }
