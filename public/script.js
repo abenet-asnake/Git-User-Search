@@ -10,13 +10,13 @@ function searchUser(){
 
 
 function displayUserDetails(user){
-    console.log('hello  world');
-    const userDetailsDiv = document.getElementById("userDetail");
-    userDetailsDiv.innerHTML = " ";
+console.log('hello  world');
+ const userDetailsDiv = document.getElementById("userDetail");
+userDetailsDiv.innerHTML = " ";
 
-    // creating userProfile DIV in the html element
-    const userProfile = document.createElement("div");
-    userProfile.classList.add("user-Profile");
+// creating userProfile DIV in the html element
+const userProfile = document.createElement("div");
+userProfile.classList.add("user-Profile");
 // creating user image element having the classList.add("user-image") method
 const userImage = document.createElement("img");
 userImage.src = user.avatar_url;
@@ -31,6 +31,10 @@ const userProfileLink = document.createElement("a");
 userProfileLink.href=user.html_url;
 userProfileLink.textContent = "View Profile";
 userProfile.appendChild(userProfileLink);
+// creating follower profile link
+const followerProfile = document.createElement("p");
+followerProfile.textContent = "Follower: "+user.followers;
+userProfile.appendChild(followerProfile);
 
 userDetailsDiv.appendChild(userProfile);
 }
