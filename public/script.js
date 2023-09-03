@@ -6,7 +6,7 @@ function searchUser(){
         .then(response => response.json())
         .then(data => {
           displayUserDetails(data);
-          return fetch(data.repos_url); // Fetch the user's repositories
+          return fetch(data.repos_url); 
         })
         .then(response => response.json())
         .then(repositories => displayRepositories(repositories))
